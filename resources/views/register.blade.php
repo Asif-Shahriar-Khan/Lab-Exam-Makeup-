@@ -8,7 +8,7 @@
 	
 	<br>
 	
-		<form method="post" enctype="multipart/form-data">
+		<form action="{{ route('home.store') }}" method="POST" enctype="multipart/form-data">
 
 			<input type="hidden" name="_token" value="{{csrf_token()}}">
 			<fieldset>
@@ -17,7 +17,7 @@
 
             <tr>
 					<td>ID</td>
-					<td><input type="text" name="id" value=""></td>
+					<td><input type="text" name="userid" value=""></td>
 				</tr>
 				
 				<tr>
@@ -26,7 +26,7 @@
 				</tr>
 				<tr>
 					<td>Confirm Password</td>
-					<td><input type="text" name="name" value=""></td>
+					<td><input type="text" name="confpass" value=""></td>
 				</tr>
 				
 				<tr>
@@ -42,6 +42,7 @@
 					<td></td>
 					<td><input type="submit" name="submit" value="Sign Up"></td>
 				</tr>
+                <a href="{{route('login.index')}}">Sign In</a> 
 			</table>
 			</fieldset>
 		</form>
